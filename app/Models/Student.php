@@ -22,4 +22,20 @@ class Student extends Model
         'photo_path',
         'status',
     ];
+
+    public function institution()
+    {
+        return $this->belongsTo(Institution::class);
+    }
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class, 'class_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(User::class, 'parent_id');
+    }
+
 }

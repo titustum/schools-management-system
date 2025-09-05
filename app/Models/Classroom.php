@@ -13,4 +13,16 @@ class Classroom extends Model
         'teacher_id', 
         'level',
     ];
+
+    // belongs to Institution
+    public function institution()
+    {
+        return $this->belongsTo(Institution::class);
+    }
+
+    // belongs to Teacher (User)
+    public function teacher()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'teacher_id');
+    }
 }
