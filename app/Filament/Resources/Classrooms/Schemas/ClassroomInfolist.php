@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Classrooms\Schemas;
 
 use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class ClassroomInfolist
@@ -11,15 +12,20 @@ class ClassroomInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('school_id')
-                    ->numeric(),
-                TextEntry::make('name'),
-                TextEntry::make('stream'),
-                TextEntry::make('description'),
-                TextEntry::make('created_at')
-                    ->dateTime(),
-                TextEntry::make('updated_at')
-                    ->dateTime(),
+                Section::make('Classroom details')
+                    ->columns(2)
+                    ->columnSpanFull()
+                    ->schema([
+                        TextEntry::make('school.name'),
+                        TextEntry::make('name'),
+                        TextEntry::make('stream'),
+                        TextEntry::make('description'),
+                        TextEntry::make('created_at')
+                            ->dateTime(),
+                        TextEntry::make('updated_at')
+                            ->dateTime(),
+                    ]),
+
             ]);
     }
 }

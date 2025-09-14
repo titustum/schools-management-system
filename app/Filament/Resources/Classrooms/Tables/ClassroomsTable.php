@@ -32,6 +32,7 @@ class ClassroomsTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('name', 'asc')  // Default sort by classroom name ascending
             ->filters([
                 //
             ])
