@@ -2,39 +2,41 @@
 
 namespace Database\Seeders;
 
-use App\Models\Classroom;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\School;
+use App\Models\Classroom;
 
 class FeeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        // Fees structures
-        // start with PP1 to Grade 9
-        $school = \App\Models\School::first() ?? 1; // assuming a default school exists
-        $feeStructures = [
-            'PP1' => 1000,
-            'PP2' => 1000,
-            'Grade 1' => 1500,
-            'Grade 2' => 1500,
-            'Grade 3' => 2000,
-            'Grade 4' => 2000,
-            'Grade 5' => 2500,
-            'Grade 6' => 2500,
-            'Grade 7' => 3000,
-            'Grade 8' => 3000,
-            'Grade 9' => 3500,
-        ];
+        $school = School::first();
+        $classrooms = Classroom::all();
 
-        foreach ($feeStructures as $className => $amount) {
-            \App\Models\Fee::create([
-                'school_id' => $school->id,
-                'classroom_id' => Classroom::where('name', $className)->first()->id,
-                'amount' => $amount,
+        if (! $school || $classrooms->isEmpty()) {
+            $this->command->warn('Ensure schools and classrooms are seeded first.');
+            return;
+        }
+
+        foreach ($classrooms as $classroom) {
+            $term1 = rand(10000, 20000);
+            $term2 = rand(10000, 20000);
+            $term3 = rand(10000, 20000); 
+
+            DB::table('fees')->insert([
+                'school_id'     => $school->id,
+                'classroom_id'  => $classroom->id,
+                'term_1_amount' => $term1,
+                'term_2_amount' => $term2,
+                'term_3_amount' => $term3, 
+                'year'          => date('Y'),
+                'description'   => 'Annual fees for ' . $classroom->name,
+                'created_at'    => now(),
+                'updated_at'    => now(),
             ]);
         }
+
+        $this->command->info('Fees seeded for all classrooms.');
     }
 }
