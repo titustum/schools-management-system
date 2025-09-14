@@ -9,8 +9,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+  use Filament\Models\Contracts\HasName;
 
-class User extends Authenticatable implements FilamentUser, MustVerifyEmail
+class User extends Authenticatable implements FilamentUser, HasName, MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -62,8 +63,19 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
         return in_array($this->role, ['admin', 'teacher']);
     }
 
+    //belonhgs to school
+    public function school()
+    {
+        return $this->belongsTo(School::class);
+    }
+
     public function canAccessFilament(): bool
     {
         return str_ends_with($this->email, '@mail.com') && $this->hasVerifiedEmail();
+    }
+
+    public function getFilamentName(): string
+    {
+        return $this->name;
     }
 }

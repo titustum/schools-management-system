@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         // make a default school
         $school = \App\Models\School::create([
-            'name' => 'Default School',
-            'phone' => '123-456-7890',
-            'county' => 'Default County',
-            'sub_county' => 'Default Sub-County',
+            'name' => 'Nandi Comprehensive School',
+            'phone' => '0716234567',
+            'county' => 'Nandi County',
+            'sub_county' => 'Nandi Sub-County',
             'logo' => null,
         ]);
 
