@@ -28,5 +28,13 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
             'school_id' => $school->id,
         ]);
+
+        $this->call([
+            ClassroomSeeder::class,
+            SubjectSeeder::class,
+            StudentSeeder::class,
+            FeeSeeder::class,
+            GradingScaleSeeder::class,
+        ]);
     }
 }

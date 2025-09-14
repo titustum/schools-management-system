@@ -32,7 +32,7 @@ class FeeSeeder extends Seeder
         foreach ($feeStructures as $className => $amount) {
             \App\Models\Fee::create([
                 'school_id' => $school->id,
-                'class_name' => Classroom::where('name', $className)->first()->id,
+                'classroom_id' => Classroom::where('name', $className)->first()->id,
                 'amount' => $amount,
             ]);
         }

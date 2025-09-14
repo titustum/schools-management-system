@@ -11,20 +11,20 @@ class StudentInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('institution_id')
+                TextEntry::make('school_id')
                     ->numeric(),
-                TextEntry::make('class_id')
+                TextEntry::make('classroom_id')
                     ->numeric(),
-                TextEntry::make('parent_id')
-                    ->numeric(),
+                TextEntry::make('admission_no'),
                 TextEntry::make('first_name'),
+                TextEntry::make('middle_name'),
                 TextEntry::make('last_name'),
-                TextEntry::make('admission_number'),
-                TextEntry::make('date_of_birth')
-                    ->date(),
                 TextEntry::make('gender'),
-                TextEntry::make('photo_path'),
-                TextEntry::make('status'),
+                TextEntry::make('dob')
+                    ->date(),
+                TextEntry::make('parent_name'),
+                TextEntry::make('parent_phone'),
+                TextEntry::make('photo'),
                 TextEntry::make('created_at')
                     ->dateTime(),
                 TextEntry::make('updated_at')

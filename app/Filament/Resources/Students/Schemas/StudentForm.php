@@ -12,26 +12,26 @@ class StudentForm
     {
         return $schema
             ->components([
-                TextInput::make('institution_id')
+                TextInput::make('school_id')
                     ->required()
                     ->numeric(),
-                TextInput::make('class_id')
+                TextInput::make('classroom_id')
                     ->required()
                     ->numeric(),
-                TextInput::make('parent_id')
-                    ->numeric(),
+                TextInput::make('admission_no')
+                    ->required(),
                 TextInput::make('first_name')
                     ->required(),
+                TextInput::make('middle_name'),
                 TextInput::make('last_name')
                     ->required(),
-                TextInput::make('admission_number')
+                TextInput::make('gender')
                     ->required(),
-                DatePicker::make('date_of_birth'),
-                TextInput::make('gender'),
-                TextInput::make('photo_path'),
-                TextInput::make('status')
-                    ->required()
-                    ->default('active'),
+                DatePicker::make('dob'),
+                TextInput::make('parent_name'),
+                TextInput::make('parent_phone')
+                    ->tel(),
+                TextInput::make('photo'),
             ]);
     }
 }

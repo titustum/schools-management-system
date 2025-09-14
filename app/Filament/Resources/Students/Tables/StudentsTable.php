@@ -15,29 +15,24 @@ class StudentsTable
     {
         return $table
             ->columns([
-                TextColumn::make('institution_id')
-                    ->numeric()
+                TextColumn::make('school.name')
                     ->sortable(),
-                TextColumn::make('class_id')
-                    ->numeric()
+                TextColumn::make('classroom.name')
                     ->sortable(),
-                TextColumn::make('parent_id')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('first_name')
+                TextColumn::make('admission_no')
                     ->searchable(),
-                TextColumn::make('last_name')
+                TextColumn::make('full_name')
                     ->searchable(),
-                TextColumn::make('admission_number')
-                    ->searchable(),
-                TextColumn::make('date_of_birth')
-                    ->date()
-                    ->sortable(),
                 TextColumn::make('gender')
                     ->searchable(),
-                TextColumn::make('photo_path')
+                TextColumn::make('dob')
+                    ->date()
+                    ->sortable(),
+                TextColumn::make('parent_name')
                     ->searchable(),
-                TextColumn::make('status')
+                TextColumn::make('parent_phone')
+                    ->searchable(),
+                TextColumn::make('photo')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
