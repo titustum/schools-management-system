@@ -16,7 +16,7 @@ class SubjectsTable
     {
         return $table
             ->columns([
-                // TextColumn::make('school.name') 
+                // TextColumn::make('school.name')
                 //     ->sortable(),
                 TextColumn::make('classroom_id')
                     ->numeric()

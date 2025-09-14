@@ -17,12 +17,15 @@ class FeeForm
                 TextInput::make('classroom_id')
                     ->required()
                     ->numeric(),
-                TextInput::make('amount')
+                TextInput::make('term_1_amount')
                     ->required()
                     ->numeric(),
-                TextInput::make('term')
+                TextInput::make('term_2_amount')
                     ->required()
-                    ->default('Term 1'),
+                    ->numeric(),
+                TextInput::make('term_3_amount')
+                    ->required()
+                    ->numeric(),
                 TextInput::make('year')
                     ->required()
                     ->default('2025'),

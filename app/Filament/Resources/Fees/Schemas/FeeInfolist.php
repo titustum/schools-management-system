@@ -15,15 +15,21 @@ class FeeInfolist
                     ->numeric(),
                 TextEntry::make('classroom_id')
                     ->numeric(),
-                TextEntry::make('amount')
+                TextEntry::make('term_1_amount')
                     ->numeric(),
-                TextEntry::make('term'),
+                TextEntry::make('term_2_amount')
+                    ->numeric(),
+                TextEntry::make('term_3_amount')
+                    ->numeric(),
                 TextEntry::make('year'),
-                TextEntry::make('description'),
+                TextEntry::make('description')
+                    ->placeholder('-'),
                 TextEntry::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->placeholder('-'),
                 TextEntry::make('updated_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->placeholder('-'),
             ]);
     }
 }

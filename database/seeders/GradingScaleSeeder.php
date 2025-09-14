@@ -2,88 +2,47 @@
 
 namespace Database\Seeders;
 
+use App\Models\Classroom;
+use App\Models\GradingScale;
+use App\Models\School;
 use Illuminate\Database\Seeder;
 
 class GradingScaleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //add grading scales for PP1 to Grade 9
-        $school = \App\Models\School::first() ?? 1; // assuming a default school exists
-        $gradingScales = [
-            'PP1' => [
-                ['from_mark' => 90, 'to_mark' => 100, 'grade' => 'A', 'points' => 4.0],
-                ['from_mark' => 80, 'to_mark' => 89, 'grade' => 'B+', 'points' => 3.5],
-                ['from_mark' => 70, 'to_mark' => 79, 'grade' => 'B', 'points' => 3.0],
-                ['from_mark' => 60, 'to_mark' => 69, 'grade' => 'C+', 'points' => 2.5],
-                ['from_mark' => 50, 'to_mark' => 59, 'grade' => 'C', 'points' => 2.0],
-                ['from_mark' => 40, 'to_mark' => 49, 'grade' => 'D+', 'points' => 1.5],
-                ['from_mark' => 30, 'to_mark' => 39, 'grade' => 'D', 'points' => 1.0],
-                ['from_mark' => 0, 'to_mark' => 29, 'grade' => 'F', 'points' => 0.0],
-            ],
-            'PP2' => [
-                ['from_mark' => 90, 'to_mark' => 100, 'grade' => 'A', 'points' => 4.0],
-                ['from_mark' => 80, 'to_mark' => 89, 'grade' => 'B+', 'points' => 3.5],
-                ['from_mark' => 70, 'to_mark' => 79, 'grade' => 'B', 'points' => 3.0],
-                ['from_mark' => 60, 'to_mark' => 69, 'grade' => 'C+', 'points' => 2.5],
-                ['from_mark' => 50, 'to_mark' => 59, 'grade' => 'C', 'points' => 2.0],
-                ['from_mark' => 40, 'to_mark' => 49, 'grade' => 'D+', 'points' => 1.5],
-                ['from_mark' => 30, 'to_mark' => 39, 'grade' => 'D', 'points' => 1.0],
-                ['from_mark' => 0, 'to_mark' => 29, 'grade' => 'F', 'points' => 0.0],
-            ],
-            'Grade 1' => [
-                ['from_mark' => 90, 'to_mark' => 100, 'grade' => 'A', 'points' => 4.0],
-                ['from_mark' => 80, 'to_mark' => 89, 'grade' => 'B+', 'points' => 3.5],
-                ['from_mark' => 70, 'to_mark' => 79, 'grade' => 'B', 'points' => 3.0],
-                ['from_mark' => 60, 'to_mark' => 69, 'grade' => 'C+', 'points' => 2.5],
-                ['from_mark' => 50, 'to_mark' => 59, 'grade' => 'C', 'points' => 2.0],
-                ['from_mark' => 40, 'to_mark' => 49, 'grade' => 'D+', 'points' => 1.5],
-                ['from_mark' => 30, 'to_mark' => 39, 'grade' => 'D', 'points' => 1.0],
-                ['from_mark' => 0, 'to_mark' => 29, 'grade' => 'F', 'points' => 0.0],
-            ],
-            'Grade 2' => [
-                ['from_mark' => 90, 'to_mark' => 100, 'grade' => 'A', 'points' => 4.0],
-                ['from_mark' => 80, 'to_mark' => 89, 'grade' => 'B+', 'points' => 3.5],
-                ['from_mark' => 70, 'to_mark' => 79, 'grade' => 'B', 'points' => 3.0],
-                ['from_mark' => 60, 'to_mark' => 69, 'grade' => 'C+', 'points' => 2.5],
-                ['from_mark' => 50, 'to_mark' => 59, 'grade' => 'C', 'points' => 2.0],
-                ['from_mark' => 40, 'to_mark' => 49, 'grade' => 'D+', 'points' => 1.5],
-                ['from_mark' => 30, 'to_mark' => 39, 'grade' => 'D', 'points' => 1.0],
-                ['from_mark' => 0, 'to_mark' => 29, 'grade' => 'F', 'points' => 0.0],
-            ],
-            'Grade 3' => [
-                ['from_mark' => 90, 'to_mark' => 100, 'grade' => 'A', 'points' => 4.0],
-                ['from_mark' => 80, 'to_mark' => 89, 'grade' => 'B+', 'points' => 3.5],
-                ['from_mark' => 70, 'to_mark' => 79, 'grade' => 'B', 'points' => 3.0],
-                ['from_mark' => 60, 'to_mark' => 69, 'grade' => 'C+', 'points' => 2.5],
-                ['from_mark' => 50, 'to_mark' => 59, 'grade' => 'C', 'points' => 2.0],
-                ['from_mark' => 40, 'to_mark' => 49, 'grade' => 'D+', 'points' => 1.5],
-                ['from_mark' => 30, 'to_mark' => 39, 'grade' => 'D', 'points' => 1.0],
-                ['from_mark' => 0, 'to_mark' => 29, 'grade' => 'F', 'points' => 0.0],
-            ],
-            'Grade 4' => [
-                ['from_mark' => 90, 'to_mark' => 100, 'grade' => 'A', 'points' => 4.0],
-                ['from_mark' => 80, 'to_mark' => 89, 'grade' => 'B+', 'points' => 3.5],
-                ['from_mark' => 70, 'to_mark' => 79, 'grade' => 'B', 'points' => 3.0],
-                ['from_mark' => 60, 'to_mark' => 69, 'grade' => 'C+', 'points' => 2.5],
-                ['from_mark' => 50, 'to_mark' => 59, 'grade' => 'C', 'points' => 2.0],
-                ['from_mark' => 40, 'to_mark' => 49, 'grade' => 'D+', 'points' => 1.5],
-                ['from_mark' => 30, 'to_mark' => 39, 'grade' => 'D', 'points' => 1.0],
-                ['from_mark' => 0, 'to_mark' => 29, 'grade' => 'F', 'points' => 0.0],
-            ],
+        $school = School::first();
+        if (! $school) {
+            $this->command->warn('No school found. Please seed the schools table first.');
 
+            return;
+        }
+
+        // Common CBC grading scale
+        $cbcScale = [
+            ['from_mark' => 80, 'to_mark' => 100, 'grade' => 'Exceeding Expectations', 'points' => 4.0],
+            ['from_mark' => 60, 'to_mark' => 79,  'grade' => 'Meeting Expectations',   'points' => 3.0],
+            ['from_mark' => 40, 'to_mark' => 59,  'grade' => 'Approaching Expectations', 'points' => 1.0],
+            ['from_mark' => 0,  'to_mark' => 39,  'grade' => 'Below Expectations',      'points' => 1.0],
         ];
 
-        foreach ($gradingScales as $className => $scales) {
-            $classroom = \App\Models\Classroom::where('name', $className)->first();
-            if (!$classroom) {
-                continue; // skip if classroom not found
+        // Class levels under CBC system
+        $cbcClasses = [
+            'PP1', 'PP2', 'Grade 1', 'Grade 2', 'Grade 3',
+            'Grade 4', 'Grade 5', 'Grade 6', 'Grade 7', 'Grade 8', 'Grade 9',
+        ];
+
+        foreach ($cbcClasses as $className) {
+            $classroom = Classroom::where('name', $className)->first();
+
+            if (! $classroom) {
+                $this->command->warn("Classroom '{$className}' not found. Skipping...");
+
+                continue;
             }
-            foreach ($scales as $scale) {
-                \App\Models\GradingScale::create([
+
+            foreach ($cbcScale as $scale) {
+                GradingScale::create([
                     'school_id' => $school->id,
                     'classroom_id' => $classroom->id,
                     'from_mark' => $scale['from_mark'],
@@ -93,5 +52,7 @@ class GradingScaleSeeder extends Seeder
                 ]);
             }
         }
+
+        $this->command->info('CBC grading scales seeded successfully.');
     }
 }

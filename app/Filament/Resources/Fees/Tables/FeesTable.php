@@ -15,16 +15,32 @@ class FeesTable
     {
         return $table
             ->columns([
-                // TextColumn::make('school.name') 
+                // TextColumn::make('school.name')
+                //     ->numeric()
                 //     ->sortable(),
-                TextColumn::make('classroom.name') 
+                TextColumn::make('classroom.name')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('term_1_amount')
+                    ->label('Term 1 Fees ')
+                    ->prefix('Ksh. ')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('term_2_amount')
+                    ->label('Term 2 Fees ')
+                    ->prefix('Ksh. ')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('term_3_amount')
+                    ->label('Term 3 Fees ')
+                    ->prefix('Ksh. ')
+                    ->numeric()
                     ->sortable(),
                 TextColumn::make('amount')
+                    ->label('Total Fees ')
+                    ->prefix('Ksh. ')
                     ->numeric()
-                    ->prefix('KSh. ')
                     ->sortable(),
-                TextColumn::make('term')
-                    ->searchable(),
                 TextColumn::make('year')
                     ->searchable(),
                 TextColumn::make('description')

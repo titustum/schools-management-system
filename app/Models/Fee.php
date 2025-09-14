@@ -14,7 +14,7 @@ class Fee extends Model
         'classroom_id',
         'term_1_amount',
         'term_2_amount',
-        'term_3_amount', 
+        'term_3_amount',
         'year',
         'description',
     ];
@@ -39,5 +39,4 @@ class Fee extends Model
     {
         return $this->term_1_amount + $this->term_2_amount + $this->term_3_amount;
     }
-
 }

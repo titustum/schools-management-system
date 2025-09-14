@@ -15,7 +15,7 @@ class SchoolsTable
     {
         return $table
             ->columns([
-                // TextColumn::make('school.name') 
+                // TextColumn::make('school.name')
                 //     ->sortable(),
                 TextColumn::make('registration_code')
                     ->searchable(),

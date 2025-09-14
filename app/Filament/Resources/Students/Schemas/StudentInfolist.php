@@ -12,11 +12,11 @@ class StudentInfolist
     public static function configure(Schema $schema): Schema
     {
         return $schema
-            ->components([ 
+            ->components([
                 Section::make('Student details')
-                ->columns(2)
-                ->columnSpanFull()
-                ->schema([ 
+                    ->columns(2)
+                    ->columnSpanFull()
+                    ->schema([
 
                         TextEntry::make('school.name'),
                         TextEntry::make('classroom.name'),
@@ -30,12 +30,12 @@ class StudentInfolist
                         TextEntry::make('parent_name'),
                         TextEntry::make('parent_phone'),
                         ImageEntry::make('photo')->circular()
-                            ->disk('public'), 
+                            ->disk('public'),
                         TextEntry::make('created_at')
                             ->dateTime(),
                         TextEntry::make('updated_at')
                             ->dateTime(),
-                ])
+                    ]),
             ]);
     }
 }

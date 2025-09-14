@@ -16,7 +16,7 @@ class StudentsTable
     {
         return $table
             ->columns([
-                // TextColumn::make('school.name') 
+                // TextColumn::make('school.name')
                 //     ->sortable(),
                 ImageColumn::make('photo')
                     ->disk('public')
@@ -35,7 +35,7 @@ class StudentsTable
                 TextColumn::make('parent_name')
                     ->searchable(),
                 TextColumn::make('parent_phone')
-                    ->searchable(), 
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

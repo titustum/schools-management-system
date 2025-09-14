@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
             $table->decimal('term_1_amount', 10, 2); // Amount for term 1
             $table->decimal('term_2_amount', 10, 2); // Amount for term 2
-            $table->decimal('term_3_amount', 10, 2); // Amount for term 3 
+            $table->decimal('term_3_amount', 10, 2); // Amount for term 3
             $table->string('year')->default(date('Y'));
             $table->string('description')->nullable();
             $table->timestamps();
