@@ -15,8 +15,8 @@ class StudentsTable
     {
         return $table
             ->columns([
-                TextColumn::make('school.name')
-                    ->sortable(),
+                // TextColumn::make('school.name') 
+                //     ->sortable(),
                 TextColumn::make('classroom.name')
                     ->sortable(),
                 TextColumn::make('admission_no')

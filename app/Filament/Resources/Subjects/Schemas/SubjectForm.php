@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Subjects\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class SubjectForm
@@ -11,16 +12,17 @@ class SubjectForm
     {
         return $schema
             ->components([
-                TextInput::make('institution_id')
+                TextInput::make('school_id')
                     ->required()
                     ->numeric(),
-                TextInput::make('class_id')
-                    ->numeric(),
-                TextInput::make('teacher_id')
+                TextInput::make('classroom_id')
+                    ->required()
                     ->numeric(),
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('code'),
+                Toggle::make('is_core')
+                    ->required(),
             ]);
     }
 }

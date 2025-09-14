@@ -15,9 +15,8 @@ class MarksTable
     {
         return $table
             ->columns([
-                TextColumn::make('institution_id')
-                    ->numeric()
-                    ->sortable(),
+                // TextColumn::make('school.name') 
+                //     ->sortable(),
                 TextColumn::make('student_id')
                     ->numeric()
                     ->sortable(),

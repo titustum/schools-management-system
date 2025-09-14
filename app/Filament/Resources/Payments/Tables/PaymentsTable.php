@@ -15,9 +15,8 @@ class PaymentsTable
     {
         return $table
             ->columns([
-                TextColumn::make('school_id')
-                    ->numeric()
-                    ->sortable(),
+                // TextColumn::make('school.name') 
+                //     ->sortable(),
                 TextColumn::make('student_id')
                     ->numeric()
                     ->sortable(),

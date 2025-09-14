@@ -15,9 +15,8 @@ class GradingScalesTable
     {
         return $table
             ->columns([
-                TextColumn::make('school_id')
-                    ->numeric()
-                    ->sortable(),
+                // TextColumn::make('school.name') 
+                //     ->sortable(),
                 TextColumn::make('classroom_id')
                     ->numeric()
                     ->sortable(),
