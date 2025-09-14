@@ -11,7 +11,7 @@ class School extends Model
 
     protected $fillable = [
         'name', 'registration_code', 'county', 'sub_county',
-        'phone', 'email', 'logo'
+        'phone', 'email', 'logo',
     ];
 
     public function classrooms()

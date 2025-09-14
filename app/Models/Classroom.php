@@ -10,7 +10,7 @@ class Classroom extends Model
     use HasFactory;
 
     protected $fillable = [
-        'school_id', 'name', 'stream', 'description'
+        'school_id', 'name', 'stream', 'description',
     ];
 
     public function school()

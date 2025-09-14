@@ -12,7 +12,7 @@ class Payment extends Model
     protected $fillable = [
         'school_id', 'student_id', 'classroom_id',
         'amount', 'method', 'transaction_code',
-        'term', 'year', 'date'
+        'term', 'year', 'date',
     ];
 
     public function school()

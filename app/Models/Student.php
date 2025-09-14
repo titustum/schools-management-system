@@ -12,7 +12,7 @@ class Student extends Model
     protected $fillable = [
         'school_id', 'classroom_id', 'admission_no',
         'first_name', 'middle_name', 'last_name',
-        'gender', 'dob', 'parent_name', 'parent_phone', 'photo'
+        'gender', 'dob', 'parent_name', 'parent_phone', 'photo',
     ];
 
     public function school()
@@ -46,6 +46,7 @@ class Student extends Model
     {
         $expected = $this->classroom->fees()->sum('amount');
         $paid = $this->payments()->sum('amount');
+
         return $expected - $paid;
     }
 }

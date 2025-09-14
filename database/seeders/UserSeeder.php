@@ -1,9 +1,9 @@
 <?php
- 
+
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Models\Institution;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,7 +14,8 @@ class UserSeeder extends Seeder
         $institutions = Institution::all();
 
         if ($institutions->count() < 3) {
-            $this->command->warn("Please seed at least 3 institutions before running the UserSeeder.");
+            $this->command->warn('Please seed at least 3 institutions before running the UserSeeder.');
+
             return;
         }
 

@@ -11,7 +11,7 @@ class GradingScale extends Model
 
     protected $fillable = [
         'school_id', 'classroom_id', 'from_mark',
-        'to_mark', 'grade', 'points'
+        'to_mark', 'grade', 'points',
     ];
 
     public function school()

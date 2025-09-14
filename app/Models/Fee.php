@@ -10,7 +10,7 @@ class Fee extends Model
     use HasFactory;
 
     protected $fillable = [
-        'school_id', 'classroom_id', 'amount', 'term', 'year', 'description'
+        'school_id', 'classroom_id', 'amount', 'term', 'year', 'description',
     ];
 
     public function school()

@@ -11,7 +11,7 @@ class Mark extends Model
 
     protected $fillable = [
         'school_id', 'student_id', 'subject_id',
-        'classroom_id', 'term', 'year', 'marks', 'grade'
+        'classroom_id', 'term', 'year', 'marks', 'grade',
     ];
 
     public function school()
