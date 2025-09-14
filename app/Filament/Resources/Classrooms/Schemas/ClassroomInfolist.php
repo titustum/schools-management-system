@@ -11,12 +11,11 @@ class ClassroomInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('institution_id')
-                    ->numeric(),
-                TextEntry::make('teacher_id')
+                TextEntry::make('school_id')
                     ->numeric(),
                 TextEntry::make('name'),
-                TextEntry::make('level'),
+                TextEntry::make('stream'),
+                TextEntry::make('description'),
                 TextEntry::make('created_at')
                     ->dateTime(),
                 TextEntry::make('updated_at')

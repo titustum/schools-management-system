@@ -22,7 +22,7 @@ class GradingScaleResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'classroom_id';
+    protected static ?string $recordTitleAttribute = 'grade';
 
     public static function form(Schema $schema): Schema
     {

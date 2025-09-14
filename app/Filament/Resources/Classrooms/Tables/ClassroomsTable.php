@@ -15,15 +15,14 @@ class ClassroomsTable
     {
         return $table
             ->columns([
-                TextColumn::make('institution_id')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('teacher_id')
+                TextColumn::make('school_id')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('level')
+                TextColumn::make('stream')
+                    ->searchable(),
+                TextColumn::make('description')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

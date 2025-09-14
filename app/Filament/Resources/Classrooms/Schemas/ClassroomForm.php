@@ -11,15 +11,13 @@ class ClassroomForm
     {
         return $schema
             ->components([
-                TextInput::make('institution_id')
+                TextInput::make('school_id')
                     ->required()
-                    ->numeric(),
-                TextInput::make('teacher_id')
                     ->numeric(),
                 TextInput::make('name')
                     ->required(),
-                TextInput::make('level')
-                    ->required(),
+                TextInput::make('stream'),
+                TextInput::make('description'),
             ]);
     }
 }
